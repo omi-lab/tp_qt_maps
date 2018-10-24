@@ -48,14 +48,14 @@ void QFontFont::prepareGlyph(char16_t character, const std::function<void(const 
 
   QChar ch = character;
 
-  glyph.leftBearing   = float( d->fontMetrics.leftBearing(ch)); //Negative for values to the left of 0
-  glyph.rightBearing  = float(-d->fontMetrics.rightBearing(ch));//Positive to the right of kerningWidth
-  glyph.topBearing    = float( d->fontMetrics.ascent());        //Positive above 0
-  glyph.bottomBearing = float(-d->fontMetrics.descent());       //Positive above 0
+  auto rect = d->fontMetrics.boundingRect(ch);
+
+  glyph.leftBearing   = float( d->fontMetrics.leftBearing(ch));  //Negative for values to the left of 0
+  glyph.rightBearing  = float(-d->fontMetrics.rightBearing(ch)); //Positive to the right of kerningWidth
+  glyph.topBearing    = float(-rect.y());                        //Positive above 0
+  glyph.bottomBearing = float(-(rect.height()+rect.y()));        //Positive above 0
 
   glyph.kerningWidth = float(d->fontMetrics.width(ch));
-
-  auto rect = d->fontMetrics.boundingRect(ch);
 
   const int width  = rect.width()  + 2;
   const int height = rect.height() + 2;
