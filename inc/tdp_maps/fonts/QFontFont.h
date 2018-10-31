@@ -23,6 +23,9 @@ public:
   //################################################################################################
   void prepareGlyph(char16_t character, const std::function<void(const tp_maps::Glyph&)>& addGlyph) const override;
 
+  //################################################################################################
+  float lineHeight() const override;
+
 private:
   struct Private;
   Private* d;

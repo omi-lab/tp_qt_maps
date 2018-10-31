@@ -97,4 +97,10 @@ void QFontFont::prepareGlyph(char16_t character, const std::function<void(const 
   addGlyph(glyph);
 }
 
+//##################################################################################################
+float QFontFont::lineHeight() const
+{
+  return d->fontMetrics.lineSpacing();
+}
+
 }
