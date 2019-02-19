@@ -10,7 +10,7 @@
 #endif
 
 //##################################################################################################
-//! Helpers for using tp_maps in Qt
+//! Utils for using tp_maps in Qt
 /*!
 \see tdp_maps_widget
 \see tdp_maps_window
