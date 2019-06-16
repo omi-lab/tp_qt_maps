@@ -75,7 +75,7 @@ void QFontFont::prepareGlyph(char16_t character, const std::function<void(const 
   }
 
   std::vector<TPPixel> data;
-  data.resize(size_t(width*height));
+  data.resize(size_t(width) * size_t(height));
 
   glyph.w = width;
   glyph.h = height;
