@@ -55,8 +55,11 @@ void QFontFont::prepareGlyph(char16_t character, const std::function<void(const 
   glyph.topBearing    = float(-rect.y());                        //Positive above 0
   glyph.bottomBearing = float(-(rect.height()+rect.y()));        //Positive above 0
 
+#if QT_VERSION >= 0x050B00
+  glyph.kerningWidth = float(d->fontMetrics.horizontalAdvance(ch));
+#else
   glyph.kerningWidth = float(d->fontMetrics.width(ch));
-  //glyph.kerningWidth = float(d->fontMetrics.horizontalAdvance(ch));
+#endif
 
   const int width  = rect.width()  + 2;
   const int height = rect.height() + 2;
