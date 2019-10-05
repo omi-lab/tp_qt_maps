@@ -11,7 +11,7 @@ namespace tp_qt_maps
 {
 
 //##################################################################################################
-class tp_qt_MAPS_SHARED_EXPORT QImageTexture : public tp_maps::Texture
+class TP_QT_MAPS_SHARED_EXPORT QImageTexture : public tp_maps::Texture
 {
 public:
   //################################################################################################

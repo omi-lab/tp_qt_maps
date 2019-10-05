@@ -11,7 +11,7 @@ namespace tp_qt_maps
 {
 
 //##################################################################################################
-tp_maps::TextureData tp_qt_MAPS_SHARED_EXPORT convertTexture(const QImage& image);
+tp_maps::TextureData TP_QT_MAPS_SHARED_EXPORT convertTexture(const QImage& image);
 
 }
 #endif

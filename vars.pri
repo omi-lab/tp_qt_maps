@@ -1,7 +1,7 @@
 TARGET = tp_qt_maps
 TEMPLATE = lib
 
-DEFINES += tp_qt_MAPS_LIBRARY
+DEFINES += TP_QT_MAPS_LIBRARY
 
 #SOURCES += src/Globals.cpp
 HEADERS += inc/tp_qt_maps/Globals.h
