@@ -1,17 +1,17 @@
-#ifndef tdp_maps_QImageTexture_h
-#define tdp_maps_QImageTexture_h
+#ifndef tp_qt_maps_QImageTexture_h
+#define tp_qt_maps_QImageTexture_h
 
-#include "tdp_maps/Globals.h"
+#include "tp_qt_maps/Globals.h"
 
 #include "tp_maps/Texture.h"
 
 class QImage;
 
-namespace tdp_maps
+namespace tp_qt_maps
 {
 
 //##################################################################################################
-class TDP_MAPS_SHARED_EXPORT QImageTexture : public tp_maps::Texture
+class tp_qt_MAPS_SHARED_EXPORT QImageTexture : public tp_maps::Texture
 {
 public:
   //################################################################################################

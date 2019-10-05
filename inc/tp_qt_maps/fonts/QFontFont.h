@@ -1,17 +1,17 @@
-#ifndef tdp_maps_QImageTexture_h
-#define tdp_maps_QImageTexture_h
+#ifndef tp_qt_maps_QImageTexture_h
+#define tp_qt_maps_QImageTexture_h
 
-#include "tdp_maps/Globals.h"
+#include "tp_qt_maps/Globals.h"
 
 #include "tp_maps/Font.h"
 
 class QFont;
 
-namespace tdp_maps
+namespace tp_qt_maps
 {
 
 //##################################################################################################
-class TDP_MAPS_SHARED_EXPORT QFontFont : public tp_maps::Font
+class tp_qt_MAPS_SHARED_EXPORT QFontFont : public tp_maps::Font
 {
 public:
   //################################################################################################

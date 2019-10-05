@@ -1,8 +1,8 @@
-#include "tdp_maps/ConvertTexture.h"
+#include "tp_qt_maps/ConvertTexture.h"
 
 #include <QImage>
 
-namespace tdp_maps
+namespace tp_qt_maps
 {
 
 //##################################################################################################

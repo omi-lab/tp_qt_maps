@@ -1,4 +1,4 @@
-#include "tdp_maps/textures/QImageTexture.h"
+#include "tp_qt_maps/textures/QImageTexture.h"
 #include "tp_maps/Map.h"
 
 #include "tp_utils/DebugUtils.h"
@@ -7,7 +7,7 @@
 #include <QImage>
 #include <QPainter>
 
-namespace tdp_maps
+namespace tp_qt_maps
 {
 
 //##################################################################################################

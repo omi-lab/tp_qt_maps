@@ -1,4 +1,4 @@
-#include "tdp_maps/fonts/QFontFont.h"
+#include "tp_qt_maps/fonts/QFontFont.h"
 
 #include "tp_maps/textures/BasicTexture.h"
 
@@ -10,7 +10,7 @@
 #include <QImage>
 #include <QPainter>
 
-namespace tdp_maps
+namespace tp_qt_maps
 {
 
 //##################################################################################################
