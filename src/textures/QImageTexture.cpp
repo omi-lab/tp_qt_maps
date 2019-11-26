@@ -13,6 +13,10 @@ namespace tp_qt_maps
 //##################################################################################################
 struct QImageTexture::Private
 {
+  TP_REF_COUNT_OBJECTS("tp_qt_maps::QImageTexture::Private");
+  TP_NONCOPYABLE(Private);
+  Private() = default;
+
   bool imageReady{false};
   QImage image;
   float fw{1.0f};

@@ -16,6 +16,9 @@ namespace tp_qt_maps
 //##################################################################################################
 struct QFontFont::Private
 {
+  TP_REF_COUNT_OBJECTS("tp_qt_maps::QFontFont::Private");
+  TP_NONCOPYABLE(Private);
+
   const QFont font;
   const QFontMetrics fontMetrics;
 
