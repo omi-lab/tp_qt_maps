@@ -1,6 +1,6 @@
-#include "tdp_maps/Globals.h"
+#include "tp_qt_maps/Globals.h"
 
-namespace tdp_maps
+namespace tp_qt_maps
 {
 
 }

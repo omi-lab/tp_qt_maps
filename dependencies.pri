@@ -1,3 +1,4 @@
+QT += core gui
 TP_DEPENDENCIES += opengl
 DEPENDENCIES += tp_maps
 INCLUDEPATHS += tp_qt_maps/inc/
