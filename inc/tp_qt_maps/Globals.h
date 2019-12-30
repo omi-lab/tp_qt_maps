@@ -3,6 +3,8 @@
 
 #include "tp_utils/StringID.h"
 
+#include "tp_maps/Globals.h"
+
 #if defined(TP_QT_MAPS_LIBRARY)
 #  define TP_QT_MAPS_SHARED_EXPORT TP_EXPORT
 #else
@@ -17,7 +19,8 @@
 */
 namespace tp_qt_maps
 {
-
+//##################################################################################################
+tp_maps::OpenGLProfile getOpenGLProfile();
 }
 
 #endif

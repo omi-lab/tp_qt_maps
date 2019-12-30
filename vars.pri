@@ -3,7 +3,7 @@ TEMPLATE = lib
 
 DEFINES += TP_QT_MAPS_LIBRARY
 
-#SOURCES += src/Globals.cpp
+SOURCES += src/Globals.cpp
 HEADERS += inc/tp_qt_maps/Globals.h
 
 SOURCES += src/ConvertTexture.cpp
