@@ -148,13 +148,13 @@ GLuint QImageTexture::bindTexture(const QImage& img,
 }
 
 //##################################################################################################
-glm::vec2 QImageTexture::textureDims()const
+glm::vec2 QImageTexture::textureDims() const
 {
   return {d->fw, d->fh};
 }
 
 //##################################################################################################
-glm::vec2 QImageTexture::imageDims()const
+glm::vec2 QImageTexture::imageDims() const
 {
   return glm::vec2(d->image.width(), d->image.height());
 }

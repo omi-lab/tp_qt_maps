@@ -3,7 +3,7 @@
 
 #include "tp_qt_maps/Globals.h"
 
-#include "tp_maps/textures/BasicTexture.h"
+#include "tp_image_utils/ColorMap.h"
 
 class QImage;
 
@@ -11,7 +11,7 @@ namespace tp_qt_maps
 {
 
 //##################################################################################################
-tp_maps::TextureData TP_QT_MAPS_SHARED_EXPORT convertTexture(const QImage& image);
+tp_image_utils::ColorMap TP_QT_MAPS_SHARED_EXPORT convertTexture(const QImage& image);
 
 }
 #endif

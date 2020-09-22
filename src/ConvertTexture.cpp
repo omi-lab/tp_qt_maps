@@ -6,18 +6,14 @@ namespace tp_qt_maps
 {
 
 //##################################################################################################
-tp_maps::TextureData convertTexture(const QImage& image)
+tp_image_utils::ColorMap convertTexture(const QImage& image)
 {
-  tp_maps::TextureData textureData;
-
   QImage img = image.mirrored(false, true);
   img = img.convertToFormat(QImage::Format_ARGB32);
 
-  textureData.w = size_t(img.width());
-  textureData.h = size_t(img.height());
+  tp_image_utils::ColorMap textureData(size_t(img.width()), size_t(img.height()));
 
-  auto newData = new TPPixel[size_t(textureData.w * textureData.h)];
-  textureData.data = newData;
+  auto newData = textureData.data();
   {
     const uchar* p = img.bits();
     const uchar* pMax = p + (img.bytesPerLine() * img.height());

@@ -46,10 +46,10 @@ public:
                      GLuint minFilterOption);
 
   //################################################################################################
-  glm::vec2 textureDims()const override;
+  glm::vec2 textureDims() const override;
 
   //################################################################################################
-  glm::vec2 imageDims()const override;
+  glm::vec2 imageDims() const override;
 
 private:
   struct Private;
