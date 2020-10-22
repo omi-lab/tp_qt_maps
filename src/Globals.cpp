@@ -1,5 +1,7 @@
 #include "tp_qt_maps/Globals.h"
 
+#include "tp_image_utils/LoadImages.h"
+
 #include "tp_utils/DebugUtils.h"
 
 #include <QOffscreenSurface>
@@ -67,4 +69,34 @@ tp_maps::OpenGLProfile getOpenGLProfile()
   return TP_DEFAULT_PROFILE;
 }
 
+//##################################################################################################
+QPixmap loadPixmapFromResource(const std::string& path)
+{
+  tp_image_utils::ColorMap iconData = tp_image_utils::loadImageFromResource(path);
+  QImage icon(int(iconData.width()), int(iconData.height()), QImage::Format_ARGB32);
+  for(size_t y=0; y<iconData.height(); y++)
+  {
+    for(size_t x=0; x<iconData.width(); x++)
+    {
+      auto c = iconData.pixel(x, y);
+      icon.setPixel(int(x), int(y), QColor(c.r, c.g, c.b, c.a).rgba());
+    }
+  }
+
+  return QPixmap::fromImage(icon);
+}
+
+//##################################################################################################
+QIcon loadIconFromResource(const std::string& path)
+{
+  return loadIconFromResource(path, path);
+}
+
+//##################################################################################################
+QIcon loadIconFromResource(const std::string& normal, const std::string& down)
+{
+  QIcon icon(loadPixmapFromResource(normal));
+  icon.addPixmap(loadPixmapFromResource(down), QIcon::Normal, QIcon::On);
+  return icon;
+}
 }
