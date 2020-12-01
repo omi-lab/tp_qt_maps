@@ -13,5 +13,8 @@ namespace tp_qt_maps
 //##################################################################################################
 tp_image_utils::ColorMap TP_QT_MAPS_SHARED_EXPORT convertTexture(const QImage& image);
 
+//##################################################################################################
+QImage TP_QT_MAPS_SHARED_EXPORT convertTexture(const tp_image_utils::ColorMap& image);
+
 }
 #endif

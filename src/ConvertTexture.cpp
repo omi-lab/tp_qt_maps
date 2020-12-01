@@ -30,4 +30,20 @@ tp_image_utils::ColorMap convertTexture(const QImage& image)
   return textureData;
 }
 
+//##################################################################################################
+QImage convertTexture(const tp_image_utils::ColorMap& image)
+{
+  QImage img(int(image.width()), int(image.height()), QImage::Format_ARGB32);
+  for(size_t y=0; y<image.height(); y++)
+  {
+    for(size_t x=0; x<image.width(); x++)
+    {
+      auto c = image.pixel(x, y);
+      img.setPixel(int(x), int(y), QColor(c.r, c.g, c.b, c.a).rgba());
+    }
+  }
+
+  return img;
+}
+
 }
