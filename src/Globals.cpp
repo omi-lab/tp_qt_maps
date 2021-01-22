@@ -85,7 +85,7 @@ QIcon loadIconFromResource(const std::string& path)
 //##################################################################################################
 QIcon loadIconFromResource(const std::string& normal, const std::string& down)
 {
-  QIcon icon(loadPixmapFromResource(normal));
+  QIcon icon(loadPixmapFromResource(normal));  
   icon.addPixmap(loadPixmapFromResource(down), QIcon::Normal, QIcon::On);
   return icon;
 }
