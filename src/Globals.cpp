@@ -29,7 +29,7 @@ tp_maps::OpenGLProfile getOpenGLProfile()
 
   //3.0
   {
-    QStringList parts=version.split(" ", QString::SkipEmptyParts);
+    QStringList parts=version.split(" ", Qt::SkipEmptyParts);
     if(parts.isEmpty())
       return TP_DEFAULT_PROFILE;
     version = parts.first();
@@ -38,7 +38,7 @@ tp_maps::OpenGLProfile getOpenGLProfile()
   int major=3;
   int minor=0;
   {
-    QStringList parts=version.split(".", QString::SkipEmptyParts);
+    QStringList parts=version.split(".", Qt::SkipEmptyParts);
     if(parts.isEmpty())
       return TP_DEFAULT_PROFILE;
 
