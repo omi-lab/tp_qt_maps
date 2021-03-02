@@ -6,6 +6,9 @@ DEFINES += TP_QT_MAPS_LIBRARY
 SOURCES += src/Globals.cpp
 HEADERS += inc/tp_qt_maps/Globals.h
 
+SOURCES += src/OffscreenContext.cpp
+HEADERS += inc/tp_qt_maps/OffscreenContext.h
+
 SOURCES += src/ConvertTexture.cpp
 HEADERS += inc/tp_qt_maps/ConvertTexture.h
 

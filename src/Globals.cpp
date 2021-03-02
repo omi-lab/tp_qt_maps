@@ -1,13 +1,10 @@
 #include "tp_qt_maps/Globals.h"
 #include "tp_qt_maps/ConvertTexture.h"
+#include "tp_qt_maps/OffscreenContext.h"
 
 #include "tp_image_utils/LoadImages.h"
 
 #include "tp_utils/DebugUtils.h"
-
-#include <QOffscreenSurface>
-#include <QOpenGLContext>
-#include <QGLFunctions>
 
 namespace tp_qt_maps
 {
@@ -15,15 +12,10 @@ namespace tp_qt_maps
 //##################################################################################################
 tp_maps::OpenGLProfile getOpenGLProfile()
 {
-  QOffscreenSurface surf;
-  surf.create();
-
-  QOpenGLContext ctx;
-  ctx.create();
-  ctx.makeCurrent(&surf);
+  OffscreenContext offscreenContext;
 
   //3.0 Mesa 19.1.8
-  QString version(reinterpret_cast<const char*>(ctx.functions()->glGetString(GL_VERSION)));
+  QString version(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
 
   //tpWarning() << "OpenGL Version: " << version.toStdString();
 
