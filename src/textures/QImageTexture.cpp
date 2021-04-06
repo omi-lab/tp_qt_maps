@@ -46,23 +46,11 @@ void QImageTexture::setImage(const QImage& image)
     d->image = QImage();
   else
   {
-    auto po2 = [](uint32_t v)
-    {
-      v--;
-      v |= v >> 1;
-      v |= v >> 2;
-      v |= v >> 4;
-      v |= v >> 8;
-      v |= v >> 16;
-      v++;
-      return v;
-    };
-
     int w = image.width();
     int h = image.height();
 
-    int wpo2 = po2(w);
-    int hpo2 = po2(h);
+    int wpo2 = tp_math_utils::powerOf2(w);
+    int hpo2 = tp_math_utils::powerOf2(h);
 
     {
       d->image = QImage(wpo2, hpo2, QImage::Format_ARGB32);
