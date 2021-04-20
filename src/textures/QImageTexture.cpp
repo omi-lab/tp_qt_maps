@@ -49,8 +49,8 @@ void QImageTexture::setImage(const QImage& image)
     int w = image.width();
     int h = image.height();
 
-    int wpo2 = tp_math_utils::powerOf2(w);
-    int hpo2 = tp_math_utils::powerOf2(h);
+    int wpo2 = int(tp_math_utils::powerOf2(w));
+    int hpo2 = int(tp_math_utils::powerOf2(h));
 
     {
       d->image = QImage(wpo2, hpo2, QImage::Format_ARGB32);
