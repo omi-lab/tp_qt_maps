@@ -34,13 +34,19 @@ tp_image_utils::ColorMap convertTexture(const QImage& image)
 QImage convertTexture(const tp_image_utils::ColorMap& image)
 {
   QImage img(int(image.width()), int(image.height()), QImage::Format_ARGB32);
-  for(size_t y=0; y<image.height(); y++)
+
+  const TPPixel* src = image.constData();
+  const TPPixel* srcMax = src + image.size();
+  uchar* dst = img.bits();
+  for(; src<srcMax; src++, dst+=4)
   {
-    for(size_t x=0; x<image.width(); x++)
-    {
-      auto c = image.pixel(x, y);
-      img.setPixel(int(x), int(y), QColor(c.r, c.g, c.b, c.a).rgba());
-    }
+    uint32_t rgba =
+        (src->a << 24) +
+        (src->r << 16) +
+        (src->g <<  8) +
+        (src->b);
+
+    memcpy(dst, &rgba, 4);
   }
 
   return img;
