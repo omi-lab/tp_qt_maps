@@ -1,7 +1,8 @@
 #ifndef tp_qt_maps_OffscreenContext_h
 #define tp_qt_maps_OffscreenContext_h
 
-#include "tp_qt_maps/Globals.h"
+// Don't bring in tp_qt_maps/Globals.h because is causes GLEW warnings.
+#include "tp_utils/Globals.h"
 
 namespace tp_qt_maps
 {
