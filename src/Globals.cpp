@@ -1,10 +1,7 @@
 #include "tp_qt_maps/Globals.h"
-#include "tp_qt_maps/ConvertTexture.h"
 #include "tp_qt_maps/OffscreenContext.h"
 
-#include "tp_image_utils/LoadImages.h"
-
-#include "tp_utils/DebugUtils.h"
+#include <QStringList>
 
 namespace tp_qt_maps
 {
@@ -62,23 +59,4 @@ tp_maps::OpenGLProfile getOpenGLProfile()
   return TP_DEFAULT_PROFILE;
 }
 
-//##################################################################################################
-QPixmap loadPixmapFromResource(const std::string& path)
-{
-  return QPixmap::fromImage(convertTexture(tp_image_utils::loadImageFromResource(path)));
-}
-
-//##################################################################################################
-QIcon loadIconFromResource(const std::string& path)
-{
-  return loadIconFromResource(path, path);
-}
-
-//##################################################################################################
-QIcon loadIconFromResource(const std::string& normal, const std::string& down)
-{
-  QIcon icon(loadPixmapFromResource(normal));  
-  icon.addPixmap(loadPixmapFromResource(down), QIcon::Normal, QIcon::On);
-  return icon;
-}
 }

@@ -1,6 +1,9 @@
 #include "tp_qt_maps/ConvertTexture.h"
 
+#include "tp_image_utils/LoadImages.h"
+
 #include <QImage>
+#include <QIcon>
 
 namespace tp_qt_maps
 {
@@ -50,6 +53,26 @@ QImage convertTexture(const tp_image_utils::ColorMap& image)
   }
 
   return img;
+}
+
+//##################################################################################################
+QPixmap loadPixmapFromResource(const std::string& path)
+{
+  return QPixmap::fromImage(convertTexture(tp_image_utils::loadImageFromResource(path)));
+}
+
+//##################################################################################################
+QIcon loadIconFromResource(const std::string& path)
+{
+  return loadIconFromResource(path, path);
+}
+
+//##################################################################################################
+QIcon loadIconFromResource(const std::string& normal, const std::string& down)
+{
+  QIcon icon(loadPixmapFromResource(normal));
+  icon.addPixmap(loadPixmapFromResource(down), QIcon::Normal, QIcon::On);
+  return icon;
 }
 
 }
