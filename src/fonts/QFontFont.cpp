@@ -1,8 +1,7 @@
 #include "tp_qt_maps/fonts/QFontFont.h"
 
-#include "tp_maps/textures/BasicTexture.h"
-
-#include "tp_utils/DebugUtils.h"
+#include "tp_utils/RefCount.h"
+#include "tp_utils/TPPixel.h"
 
 #include <QFont>
 #include <QFontInfo>

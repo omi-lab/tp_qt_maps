@@ -12,6 +12,7 @@ struct OffscreenContext::Private
   QOffscreenSurface surf;
   QOpenGLContext ctx;
 };
+
 //##################################################################################################
 OffscreenContext::OffscreenContext():
   d(new Private)
