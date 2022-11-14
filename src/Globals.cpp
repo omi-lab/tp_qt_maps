@@ -12,18 +12,25 @@ tp_maps::OpenGLProfile getOpenGLProfile()
   OffscreenContext offscreenContext;
 
   //3.0 Mesa 19.1.8
+  //OpenGL ES 3.2 NVIDIA 510.68.02
   QString version(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
 
-  //tpWarning() << "OpenGL Version: " << version.toStdString();
+  bool es=false;
 
   //3.0
   {
     QStringList parts=version.split(" ", Qt::SkipEmptyParts);
     if(parts.isEmpty())
       return TP_DEFAULT_PROFILE;
-    version = parts.first();
-  }
 
+    if(parts.size()>=3 && parts.at(0) == "OpenGL" && parts.at(1) == "ES")
+    {
+      es = true;
+      version = parts.at(2);
+    }
+    else
+      version = parts.first();
+  }
   int major=3;
   int minor=0;
   {
@@ -36,11 +43,13 @@ tp_maps::OpenGLProfile getOpenGLProfile()
       minor = parts.at(1).toInt();
   }
 
-  //Implement ES
-  //if(major==1 && minor==0) return tp_maps::OpenGLProfile::VERSION_100_ES;
-  //if(major==1 && minor==0) return tp_maps::OpenGLProfile::VERSION_300_ES;
-  //if(major==1 && minor==0) return tp_maps::OpenGLProfile::VERSION_310_ES;
-  //if(major==1 && minor==0) return tp_maps::OpenGLProfile::VERSION_320_ES;
+  if(es)
+  {
+    if(major==1 && minor==0) return tp_maps::OpenGLProfile::VERSION_100_ES;
+    if(major==3 && minor==0) return tp_maps::OpenGLProfile::VERSION_300_ES;
+    if(major==3 && minor==1) return tp_maps::OpenGLProfile::VERSION_310_ES;
+    if(major==3 && minor==2) return tp_maps::OpenGLProfile::VERSION_320_ES;
+  }
 
   if(major==2 && minor==0) return tp_maps::OpenGLProfile::VERSION_110; //2.0
   if(major==2 && minor==1) return tp_maps::OpenGLProfile::VERSION_120; //2.1
