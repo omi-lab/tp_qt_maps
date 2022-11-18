@@ -14,7 +14,6 @@ tp_maps::OpenGLProfile getOpenGLProfile()
   //3.0 Mesa 19.1.8
   //OpenGL ES 3.2 NVIDIA 510.68.02
   QString version(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
-
   bool es=false;
 
   //3.0
