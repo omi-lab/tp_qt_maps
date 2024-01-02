@@ -19,7 +19,7 @@ namespace tp_qt_maps
 {
 
 //##################################################################################################
-tp_maps::OpenGLProfile getOpenGLProfile();
+tp_maps::ShaderProfile getShaderProfile();
 
 }
 
