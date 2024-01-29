@@ -1,6 +1,8 @@
 #include "tp_qt_maps/Globals.h"
 #include "tp_qt_maps/OffscreenContext.h"
 
+#include "tp_maps/subsystems/open_gl/OpenGL.h"
+
 #include <QStringList>
 
 namespace tp_qt_maps
