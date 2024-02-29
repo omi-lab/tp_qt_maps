@@ -11,6 +11,11 @@ namespace tp_qt_maps
 //##################################################################################################
 tp_maps::ShaderProfile getShaderProfile()
 {
+  // Kludge to silence some thread sanitizer warnings.
+#ifdef TP_SANITIZE_THREAD
+  return TP_DEFAULT_PROFILE;
+#endif
+
   OffscreenContext offscreenContext;
 
   //3.0 Mesa 19.1.8

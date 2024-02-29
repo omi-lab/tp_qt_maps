@@ -62,6 +62,12 @@ QPixmap loadPixmapFromResource(const std::string& path)
 }
 
 //##################################################################################################
+QImage loadImageFromResource(const std::string& path)
+{
+  return convertTexture(tp_image_utils::loadImageFromResource(path));
+}
+
+//##################################################################################################
 QIcon loadIconFromResource(const std::string& path)
 {
   return loadIconFromResource(path, path);

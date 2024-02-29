@@ -22,6 +22,9 @@ QImage TP_QT_MAPS_SHARED_EXPORT convertTexture(const tp_image_utils::ColorMap& i
 QPixmap TP_QT_MAPS_SHARED_EXPORT loadPixmapFromResource(const std::string& path);
 
 //##################################################################################################
+QImage TP_QT_MAPS_SHARED_EXPORT loadImageFromResource(const std::string& path);
+
+//##################################################################################################
 QIcon TP_QT_MAPS_SHARED_EXPORT loadIconFromResource(const std::string& path);
 
 //##################################################################################################
