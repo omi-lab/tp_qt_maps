@@ -1,6 +1,7 @@
 #include "tp_qt_maps/ConvertTexture.h"
 
 #include "tp_image_utils/LoadImages.h"
+#include "tp_utils/Resources.h"
 
 #include <QImage>
 #include <QIcon>
@@ -58,6 +59,14 @@ QImage convertTexture(const tp_image_utils::ColorMap& image)
 //##################################################################################################
 QPixmap loadPixmapFromResource(const std::string& path)
 {
+  if(QString(path.c_str()).endsWith(".svg", Qt::CaseInsensitive))
+  {
+    auto rdata = tp_utils::resource(path);
+    QPixmap pixmap;
+    pixmap.loadFromData(reinterpret_cast<const uchar*>(rdata.data), static_cast<uint>(rdata.size));
+    return pixmap;
+  }
+
   return QPixmap::fromImage(convertTexture(tp_image_utils::loadImageFromResource(path)));
 }
 
