@@ -13,6 +13,7 @@ namespace tp_qt_maps
 //##################################################################################################
 class TP_QT_MAPS_SHARED_EXPORT QFontFont : public tp_maps::Font
 {
+  TP_DQ;
 public:
   //################################################################################################
   QFontFont(const QFont& font);
@@ -25,11 +26,6 @@ public:
 
   //################################################################################################
   float lineHeight() const override;
-
-private:
-  struct Private;
-  Private* d;
-  friend struct Private;
 };
 
 }

@@ -13,6 +13,7 @@ namespace tp_qt_maps
 //##################################################################################################
 class TP_QT_MAPS_SHARED_EXPORT QImageTexture : public tp_maps::Texture
 {
+  TP_DQ;
 public:
   //################################################################################################
   QImageTexture(tp_maps::Map* map);
@@ -50,11 +51,6 @@ public:
 
   //################################################################################################
   glm::vec2 imageDims() const override;
-
-private:
-  struct Private;
-  Private* d;
-  friend struct Private;
 };
 
 }

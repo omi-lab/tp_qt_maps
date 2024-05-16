@@ -11,16 +11,13 @@ namespace tp_qt_maps
 class OffscreenContext
 {
   TP_NONCOPYABLE(OffscreenContext);
+  TP_DQ;
 public:
   //################################################################################################
   OffscreenContext();
 
   //################################################################################################
   ~OffscreenContext();
-
-private:
-  struct Private;
-  Private* d;
 };
 
 }
