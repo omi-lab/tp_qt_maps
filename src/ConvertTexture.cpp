@@ -59,6 +59,9 @@ QImage convertTexture(const tp_image_utils::ColorMap& image)
 //##################################################################################################
 QPixmap loadPixmapFromResource(const std::string& path)
 {
+  if(path.size()>0 && path.front() == ':')
+    return QPixmap(QString::fromStdString(path));
+
   if(QString(path.c_str()).endsWith(".svg", Qt::CaseInsensitive))
   {
     auto rdata = tp_utils::resource(path);
