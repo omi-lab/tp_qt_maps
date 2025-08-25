@@ -12,7 +12,7 @@ namespace tp_qt_maps
 //##################################################################################################
 tp_image_utils::ColorMap convertTexture(const QImage& image)
 {
-  QImage img = image.mirrored(false, true);
+  QImage img = image;
   img = img.convertToFormat(QImage::Format_ARGB32);
 
   tp_image_utils::ColorMap textureData(size_t(img.width()), size_t(img.height()));

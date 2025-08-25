@@ -55,7 +55,13 @@ void QImageTexture::setImage(const QImage& image)
     {
       d->image = QImage(wpo2, hpo2, QImage::Format_ARGB32);
       QPainter painter(&d->image);
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+      painter.drawImage(0, 0, image.flipped(Qt::Vertical));
+#else
       painter.drawImage(0, 0, image.mirrored(false, true));
+#endif
+
       painter.end();
     }
 
